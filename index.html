@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud 9</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/5eafb43833.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="videos/701960520.mp4" type="video/mp4">
+            </video>
+        <div class="overlay"></div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">Cloud 9</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#new-arrivals">New Arrivals</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#" class="search-icon" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a href="checkout.html" class="cart-icon" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="user-icon" aria-label="User Account"><i class="fas fa-user"></i></a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button> 
+        </div>
+    </header>
+
+    <main>
+        <div id="search-overlay" class="search-overlay">
+            <div class="search-overlay-content">
+                <span class="close-search" aria-label="Close search">&times;</span>
+                <input type="text" id="search-input" placeholder="Search for products..." aria-label="Search input">
+                <button id="search-button" class="btn-search">Search</button>
+                <div id="search-results" class="search-results">
+                    </div>
+            </div>
+        </div>
+
+        <section class="hero-section">
+            <div class="container hero-content">
+                <h2>Effortless Style, Curated for You</h2>
+                <a href="#shop" class="btn-shop-now">Shop Now</a>
+            </div>
+        </section>
+
+        <section id="shop" class="product-grid-section">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <div class="product-grid">
+                    <div class="product-item" data-name="Urban Joggers" data-price="3500">
+                        <img src="https://placehold.co/300x300/e9e9e9/555?text=Urban+Joggers" alt="Urban Joggers">
+                        <h3>Urban Joggers</h3>
+                        <p>Ksh 3500</p>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-name="Classic Tee" data-price="1500">
+                        <img src="https://placehold.co/300x300/e9e9e9/555?text=Classic+Tee" alt="Classic Tee">
+                        <h3>Classic Tee</h3>
+                        <p>Ksh 1500</p>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-name="Streetwear Hoodie" data-price="2800">
+                        <img src="https://placehold.co/300x300/e9e9e9/555?text=Streetwear+Hoodie" alt="Streetwear Hoodie">
+                        <h3>Streetwear Hoodie</h3>
+                        <p>Ksh 2800</p>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-name="Denim Jacket" data-price="4200">
+                        <img src="https://placehold.co/300x300/e9e9e9/555?text=Denim+Jacket" alt="Denim Jacket">
+                        <h3>Denim Jacket</h3>
+                        <p>Ksh 4200</p>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-name="Cargo Shorts" data-price="2100">
+                        <img src="https://placehold.co/300x300/e9e9e9/555?text=Cargo+Shorts" alt="Cargo Shorts">
+                        <h3>Cargo Shorts</h3>
+                        <p>Ksh 2100</p>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-name="Minimalist Sweatshirt" data-price="2900">
+                        <img src="https://placehold.co/300x300/e9e9e9/555?text=Minimalist+Sweatshirt" alt="Minimalist Sweatshirt">
+                        <h3>Minimalist Sweatshirt</h3>
+                        <p>Ksh 2900</p>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="new-arrivals" class="section-padded bg-light">
+            <div class="container text-center">
+                <h2>New Arrivals</h2>
+                <p>Be the first to get your hands on our freshest drops!</p>
+                <div class="product-grid">
+                    <div class="product-item" data-name="Flowy Trousers" data-price="2700">
+                        <img src="https://placehold.co/300x300/e9e9e9/555?text=Flowy+Trousers" alt="Flowy Trousers">
+                        <h3>Flowy Trousers</h3>
+                        <p>Ksh 2700</p>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-name="Relaxed Shirt" data-price="2500">
+                        <img src="https://placehold.co/300x300/e9e9e9/555?text=Relaxed+Shirt" alt="Relaxed Shirt">
+                        <h3>Relaxed Shirt</h3>
+                        <p>Ksh 2500</p>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="collections" class="section-padded">
+            <div class="container text-center">
+                <h2>Our Collections</h2>
+                <p>Curated styles for every vibe.</p>
+                <div class="collection-grid">
+                    <div class="collection-item">
+                        <img src="https://placehold.co/400x250/e9e9e9/555?text=Everyday+Wear" alt="Everyday Wear Collection">
+                        <h3>Everyday Wear</h3>
+                        <p>Effortless pieces for a minimalist look.</p>
+                        <a href="#shop" class="btn-shop-collection">Shop Collection</a>
+                    </div>
+                    <div class="collection-item">
+                        <img src="https://placehold.co/400x250/e9e9e9/555?text=Lounge+Collection" alt="Lounge Collection">
+                        <h3>The Lounge Collection</h3>
+                        <p>Comfort and style for your downtime.</p>
+                        <a href="#shop" class="btn-shop-collection">Shop Collection</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padded bg-light">
+            <div class="container text-center">
+                <h2>About Cloud 9</h2>
+                <p>Cloud 9 is where simplicity meets sophistication. Our collections are designed for the modern individual who values comfort and timeless style. We focus on high-quality fabrics and clean lines to create pieces that are both versatile and enduring.</p>
+                <p>Founded on the principles of quality and minimalism, we aim to simplify your wardrobe with essential pieces that make you feel good. Discover a new standard of style with Cloud 9.</p>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="container text-center">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for exclusive offers and updates</p>
+                <form action="#" method="post" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter your email" required aria-label="Email for newsletter subscription">
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+         <section id="contact" class="section-padded bg-light">
+            <div class="container text-center">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Location: Mombasa, Kenya</p>
+                    <p><i class="fas fa-phone"></i> Phone: <a href="tel:+254111969099">+254 111969099</a></p>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@cloud9.ke">contact@cloud9.ke</a></p>
+                </div>
+                <div class="social-media-links">
+                    <a href="https://www.instagram.com/cloud9.ke?igsh=MTR2ZDNlY2NkMnl6bA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@cloud9.ke" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/254111969099" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cloud 9. All rights reserved.</p>
+    </footer>
+</body>
+</html>

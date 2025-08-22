@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   // 🔑 Set your exchange rate here (KES → USD)
-  const exchangeRateKEStoUSD = 160; // example: 1 USD ≈ 160 KES
+  const exchangeRateKEStoUSD = 160;
 
   function updateCartCount() {
     if (cartCountElement) {

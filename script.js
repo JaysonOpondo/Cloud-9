@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Search Overlay functionality
+    // Search Overlay
     const searchIcon = document.querySelector('.search-icon');
     const searchOverlay = document.getElementById('search-overlay');
     const closeSearch = document.querySelector('.close-search');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.getElementById('search-button');
     const searchResultsDiv = document.getElementById('search-results');
 
-    // Sample product data for search (a more realistic version would use a server-side API)
+    
     const products = [
         { name: "Urban Joggers", price: "Ksh 3500", img: "https://placehold.co/300x300/e9e9e9/555?text=Urban+Joggers" },
         { name: "Classic Tee", price: "Ksh 1500", img: "https://placehold.co/300x300/e9e9e9/555?text=Classic+Tee" },
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 5. Basic Cart Functionality
+    // 5. Cart Functionality
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartCountSpan = document.querySelector('.cart-count');
 

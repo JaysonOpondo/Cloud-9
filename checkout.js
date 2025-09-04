@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mpesaBtn = document.getElementById('mpesa-btn');
   const mpesaInstructions = document.getElementById('mpesa-instructions');
   const mpesaAmountElement = document.getElementById('mpesa-amount');
-  const paypalButton = document.querySelector('.btn-paypal');
 
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -123,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const totalKES = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
       orderMessage += `\nSubtotal: Ksh ${totalKES}\n\n`;
       orderMessage += `Customer Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city}\n`;
-      orderMessage += `Preferred Payment Method: ${paymentMethod === "mpesa" ? "M-Pesa" : "PayPal"}\n\n`;
+      orderMessage += `Preferred Payment Method: M-Pesa\n\n`;
       orderMessage += `Please confirm if these items are available ✅`;
 
       const phoneNumber = "254111969099"; // your WhatsApp number
@@ -143,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
       <p><strong>City:</strong> ${city}</p>
-      <p><strong>Payment Method:</strong> ${paymentMethod === "mpesa" ? "M-Pesa" : "PayPal"}</p>`;
+      <p><strong>Payment Method:</strong> M-Pesa</p>`;
 
       document.getElementById("popup-order-summary").innerHTML = summaryHTML;
 
@@ -152,11 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
         mpesaAmountElement.textContent = `Ksh ${totalKES}`;
       }
 
-      // ✅ Update PayPal link with USD conversion
-      if (paypalButton) {
-        const totalUSD = (totalKES / exchangeRateKEStoUSD).toFixed(2);
-        paypalButton.href = `https://www.paypal.me/YourBusinessName/${totalUSD}USD`;
-      }
+      // ✅ Remove PayPal link update
+      // if (paypalButton) {
+      //   const totalUSD = (totalKES / exchangeRateKEStoUSD).toFixed(2);
+      //   paypalButton.href = `https://www.paypal.me/YourBusinessName/${totalUSD}USD`;
+      // }
 
       // Show payment popup
       showPaymentPopup();

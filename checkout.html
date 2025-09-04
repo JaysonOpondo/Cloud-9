@@ -73,7 +73,6 @@
             <select id="payment-method" required>
               <option value="">Select Payment Method</option>
               <option value="mpesa">M-Pesa (Kenya only)</option>
-              <option value="paypal">PayPal (International)</option>
             </select>
           </div>
           <button type="submit" class="btn-checkout">Send Order via WhatsApp</button>
@@ -95,13 +94,14 @@
 
       <!-- Payment Options -->
       <div class="payment-options">
-        <a href="https://www.paypal.me/YourBusinessName" target="_blank" class="btn-paypal">Pay with PayPal</a>
+        <!-- Remove PayPal button -->
+        <!-- <a href="https://www.paypal.me/YourBusinessName" target="_blank" class="btn-paypal">Pay with PayPal</a> -->
         <button id="mpesa-btn" class="btn-mpesa">Pay with M-Pesa</button>
         <div id="mpesa-instructions" class="hidden">
-          <p><strong>M-pesa (Pochi la Biashara):</strong> </p>
+          <p><strong>M-Pesa:</strong></p>
           <p><strong>Send to:</strong> 0111969099</p>
           <p><strong>Amount:</strong> <span id="mpesa-amount"></span></p>
-          <p><em>Use your name as the referrence</em></p>
+          <p><em>Use your name as the reference</em></p>
         </div>
       </div>
     </div>

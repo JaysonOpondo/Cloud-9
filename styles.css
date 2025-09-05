@@ -486,6 +486,34 @@ footer {
     color: #888;
 }
 
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    display: none; 
+    z-index: 1003;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #333;
+}
+
+.back-to-top.show {
+    display: block; 
+}
+
+.back-to-top i {
+    pointer-events: none; 
+} 
+
 /* Checkout Styles */
 .checkout-main {
     padding: 100px 0 40px 0;

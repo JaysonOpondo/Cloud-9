@@ -4,17 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartTotalSpan = document.getElementById('cart-total');
   const cartCountElement = document.querySelector('.cart-count');
   const whatsappForm = document.getElementById('whatsapp-form');
-
-  const popup = document.getElementById('payment-popup');
-  const closePopupBtn = document.querySelector('.close-popup');
-  const mpesaBtn = document.getElementById('mpesa-btn');
-  const mpesaInstructions = document.getElementById('mpesa-instructions');
-  const mpesaAmountElement = document.getElementById('mpesa-amount');
+  const clearCartBtn = document.getElementById('clear-cart');
 
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  // 🔑 Set your exchange rate here (KES → USD)
-  const exchangeRateKEStoUSD = 160;
 
   function updateCartCount() {
     if (cartCountElement) {
@@ -99,11 +91,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Show popup
-  function showPaymentPopup() {
-    popup.classList.remove('hidden');
+  // Clear cart manually
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener('click', () => {
+      if (confirm("Are you sure you want to clear your cart?")) {
+        cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      }
+    });
   }
 
+  // WhatsApp order
   if (whatsappForm) {
     whatsappForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -112,65 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
       const city = document.getElementById('city').value;
-      const paymentMethod = document.getElementById('payment-method').value;
 
-      let orderMessage = `Hello Cloud 9 👋,\nI would like to confirm availability for the following items:\n\n`;
+      let orderMessage = `Hello Cloud 9 👋,\nI would like to order the following items:\n\n`;
       cart.forEach(item => {
         orderMessage += `• ${item.name} (x${item.quantity}) - Ksh ${item.price * item.quantity}\n`;
       });
 
       const totalKES = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      orderMessage += `\nSubtotal: Ksh ${totalKES}\n\n`;
+      orderMessage += `\nTotal: Ksh ${totalKES}\n\n`;
       orderMessage += `Customer Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city}\n`;
-      orderMessage += `Preferred Payment Method: M-Pesa\n\n`;
-      orderMessage += `Please confirm if these items are available ✅`;
 
       const phoneNumber = "254111969099"; // your WhatsApp number
       const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(orderMessage)}`;
 
       // Redirect to WhatsApp
       window.open(whatsappURL, "_blank");
-
-      // Build popup order summary
-      let summaryHTML = "<h4>Your Order</h4><ul>";
-      cart.forEach(item => {
-        summaryHTML += `<li>${item.name} (x${item.quantity}) - Ksh ${item.price * item.quantity}</li>`;
-      });
-      summaryHTML += `</ul>
-      <p><strong>Total:</strong> Ksh ${totalKES}</p>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>City:</strong> ${city}</p>
-      <p><strong>Payment Method:</strong> M-Pesa</p>`;
-
-      document.getElementById("popup-order-summary").innerHTML = summaryHTML;
-
-      // ✅ Update M-Pesa instructions with total (KES)
-      if (mpesaAmountElement) {
-        mpesaAmountElement.textContent = `Ksh ${totalKES}`;
-      }
-
-      // ✅ Remove PayPal link update
-      // if (paypalButton) {
-      //   const totalUSD = (totalKES / exchangeRateKEStoUSD).toFixed(2);
-      //   paypalButton.href = `https://www.paypal.me/YourBusinessName/${totalUSD}USD`;
-      // }
-
-      // Show payment popup
-      showPaymentPopup();
-    });
-  }
-
-  if (closePopupBtn) {
-    closePopupBtn.addEventListener('click', () => {
-      popup.classList.add('hidden');
-    });
-  }
-
-  if (mpesaBtn) {
-    mpesaBtn.addEventListener('click', () => {
-      mpesaInstructions.classList.toggle('hidden');
     });
   }
 

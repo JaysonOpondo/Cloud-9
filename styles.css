@@ -674,122 +674,42 @@ footer {
     }
 }
 
-/* Payment Popup Modal */
-.payment-popup {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+/* Payment Popup Modal Removed*/
+
+.cart-buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.payment-popup.hidden { display: none; }
-
-.popup-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: -1;
-}
-
-.popup-box {
-  background: #fff;
-  border-radius: 12px;
-  padding: 25px;
-  max-width: 420px;
-  width: 90%;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  text-align: center;
-  position: relative;
-  animation: popup-fade 0.3s ease-out;
-}
-
-@keyframes popup-fade {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.close-popup {
-  position: absolute;
-  top: 15px; right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #666;
-}
-
-.close-popup:hover { color: #000; }
-
-.popup-note {
-  font-size: 0.95em;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.popup-order-summary {
-  text-align: left;
-  margin-bottom: 20px;
-  font-size: 0.95em;
-  background: #fafafa;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-.popup-order-summary h4 {
-  margin-bottom: 8px;
-  font-size: 1.1em;
-}
-
-.popup-order-summary ul {
-  margin: 0 0 10px 15px;
-  padding: 0;
-  list-style: disc;
-}
-
-.popup-order-summary li { margin-bottom: 5px; }
-
-.payment-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.btn-paypal, .btn-mpesa {
-  display: inline-block;
-  padding: 12px 20px;
-  font-size: 1em;
-  font-weight: 700;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-paypal {
-  background: #0070ba;
+.btn-clear-cart {
+  background: #e53935;
   color: #fff;
-  text-decoration: none;
-}
-
-.btn-paypal:hover { background: #005c99; }
-
-.btn-mpesa {
-  background: #4CAF50;
-  color: #fff;
+  padding: 10px 20px;
   border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.btn-mpesa:hover { background: #3e9142; }
+.btn-clear-cart:hover {
+  background: #c62828;
+}
 
-#mpesa-instructions {
-  text-align: left;
-  background: #f9f9f9;
-  padding: 12px;
+.btn-back-shop {
+  background: #555;
+  color: #fff;
+  padding: 10px 20px;
   border-radius: 6px;
-  font-size: 0.9em;
-  border: 1px solid #ddd;
+  font-weight: 700;
+  font-size: 0.95em;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.btn-back-shop:hover {
+  background: #333;
 }

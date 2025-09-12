@@ -46,6 +46,10 @@
           <span>Total:</span>
           <span id="cart-total">Ksh 0</span>
         </div>
+        <div class="cart-buttons">
+          <button id="clear-cart" class="btn-clear-cart">Clear Cart</button>
+          <a href="index.html#shop" class="btn-back-shop">Back to Shop</a>
+        </div>
       </section>
 
       <!-- Checkout Form -->
@@ -68,44 +72,11 @@
             <label for="city">City</label>
             <input type="text" id="city" required placeholder="Enter your city"/>
           </div>
-          <div class="form-group">
-            <label for="payment-method">Preferred Payment Method</label>
-            <select id="payment-method" required>
-              <option value="">Select Payment Method</option>
-              <option value="mpesa">M-Pesa (Kenya only)</option>
-            </select>
-          </div>
           <button type="submit" class="btn-checkout">Send Order via WhatsApp</button>
         </form>
       </div>
     </div>
   </main>
-
-  <!-- Payment Popup Modal -->
-  <div id="payment-popup" class="payment-popup hidden">
-    <div class="popup-overlay"></div>
-    <div class="popup-box">
-      <span class="close-popup">&times;</span>
-      <h3>Confirm Availability Before Payment</h3>
-      <p class="popup-note">⚠️ Please confirm with us on WhatsApp that the items are available before completing payment.</p>
-
-      <!-- Order Summary -->
-      <div id="popup-order-summary" class="popup-order-summary"></div>
-
-      <!-- Payment Options -->
-      <div class="payment-options">
-        <!-- Remove PayPal button -->
-        <!-- <a href="https://www.paypal.me/YourBusinessName" target="_blank" class="btn-paypal">Pay with PayPal</a> -->
-        <button id="mpesa-btn" class="btn-mpesa">Pay with M-Pesa</button>
-        <div id="mpesa-instructions" class="hidden">
-          <p><strong>M-Pesa:</strong></p>
-          <p><strong>Send to:</strong> 0111969099</p>
-          <p><strong>Amount:</strong> <span id="mpesa-amount"></span></p>
-          <p><em>Use your name as the reference</em></p>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <footer>
     <p>&copy; 2025 Cloud 9. | Own the Game. All rights reserved.</p>

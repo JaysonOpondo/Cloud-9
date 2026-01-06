@@ -6,7 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const whatsappForm = document.getElementById('whatsapp-form');
   const clearCartBtn = document.getElementById('clear-cart');
 
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let cart;
+  try {
+    const raw = localStorage.getItem('cart');
+    const parsed = raw ? JSON.parse(raw) : null;
+    cart = Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    console.error('Failed to parse cart from localStorage', e);
+    cart = [];
+  }
 
   function updateCartCount() {
     if (cartCountElement) {

@@ -178,10 +178,10 @@ ul {
 }
 
 .hero-content {
-    background: rgba(255, 255, 255, 0.7);
+    background: transparent;
     padding: 3rem;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: none;
 }
 
 .hero-section h2 { 
